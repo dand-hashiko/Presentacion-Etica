@@ -432,12 +432,6 @@
   </style>
 </head>
 <body>
-  <!-- Botón flotante para abrir Modo Locutor en celular o PC -->
-  <button id="toggleSpeakerBtn" class="speaker-fab" aria-label="Abrir modo locutor y guion" title="Abrir Modo Locutor (Guion)">
-    <span>🎙️</span>
-    <span>Modo Locutor</span>
-  </button>
-
   <!-- Pista discreta para teclado en PC [s] -->
   <div class="group-hint" title="Presiona la tecla S para abrir las notas del expositor">[s]</div>
 
@@ -879,7 +873,6 @@
     }
 
     // Eventos de apertura/cierre
-    document.getElementById('toggleSpeakerBtn').addEventListener('click', openDrawer);
     document.getElementById('btnCloseDrawer').addEventListener('click', closeDrawer);
     drawerOverlay.addEventListener('click', closeDrawer);
 
