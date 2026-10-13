@@ -175,46 +175,46 @@
     }
 
     /* ========================================================
-       BOTÓN FLOTANTE: MODO LOCUTOR / GUION
+       BOTÓN PARA CELULAR (OCULTO EN PC)
        ======================================================== */
-    .speaker-fab {
+    .mobile-speaker-btn {
+      display: none; /* Oculto en PC */
       position: fixed;
-      bottom: 18px;
-      left: 18px;
-      z-index: 1000;
-      background: linear-gradient(135deg, rgba(189, 147, 249, 0.25), rgba(139, 233, 253, 0.25));
-      color: #f8f8f2;
-      border: 1px solid rgba(189, 147, 249, 0.45);
-      border-radius: 30px;
-      padding: 9px 16px;
-      font-size: 14px;
-      font-weight: 600;
+      bottom: 14px;
+      left: 14px;
+      z-index: 1500;
+      background: linear-gradient(135deg, rgba(189, 147, 249, 0.45), rgba(139, 233, 253, 0.35));
+      color: #ffffff;
+      border: 1px solid rgba(189, 147, 249, 0.7);
+      border-radius: 25px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
       cursor: pointer;
-      display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-      transition: all 0.25s ease;
-      user-select: none;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
       touch-action: manipulation;
     }
 
-    .speaker-fab:active {
+    .mobile-speaker-btn:active {
       transform: scale(0.96);
-      background: rgba(189, 147, 249, 0.5);
+      background: rgba(189, 147, 249, 0.7);
     }
 
-    /* En PC se mantiene muy discreto para no distraer en proyector */
+    /* En PC (ancho superior a 768px): 100% OCULTO */
     @media (min-width: 769px) {
-      .speaker-fab {
-        opacity: 0.25;
+      .mobile-speaker-btn {
+        display: none !important;
       }
-      .speaker-fab:hover {
-        opacity: 0.95;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(189, 147, 249, 0.4);
+    }
+
+    /* En CELULARES (ancho hasta 768px): VISIBLE */
+    @media (max-width: 768px) {
+      .mobile-speaker-btn {
+        display: flex !important;
       }
     }
 
@@ -432,6 +432,12 @@
   </style>
 </head>
 <body>
+  <!-- Botón flotante para celular (OCULTO EN PC, VISIBLE SOLO EN CELULARES) -->
+  <button id="mobileSpeakerBtn" class="mobile-speaker-btn" aria-label="Abrir notas y guion" title="Abrir notas del expositor (Tecla S)">
+    <span>🎙️</span>
+    <span>Notas [Tecla S]</span>
+  </button>
+
   <!-- Pista discreta para teclado en PC [s] -->
   <div class="group-hint" title="Presiona la tecla S para abrir las notas del expositor">[s]</div>
 
@@ -873,6 +879,10 @@
     }
 
     // Eventos de apertura/cierre
+    var mobileBtn = document.getElementById('mobileSpeakerBtn');
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', openDrawer);
+    }
     document.getElementById('btnCloseDrawer').addEventListener('click', closeDrawer);
     drawerOverlay.addEventListener('click', closeDrawer);
 
