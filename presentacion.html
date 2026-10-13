@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Disertación Ética: ¿Todo acto humano es moral?</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- Reveal.js CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/night.min.css" id="theme">
 
   <style>
-    /* Estilos Premium compactos y responsivos para que todo encaje al 100% */
+    /* Estilos Premium compactos y responsivos */
     :root {
       --accent: #ffb86c;
       --cyan: #8be9fd;
@@ -21,6 +21,17 @@
       --red: #ff5555;
       --purple: #bd93f9;
       --text: #f8f8f2;
+      --bg-dark: #12131a;
+      --card-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-dark);
+      overflow-x: hidden;
     }
 
     .reveal {
@@ -74,9 +85,9 @@
       font-weight: 600;
     }
 
-    /* Tarjetas de concepto compactas para no desbordar */
+    /* Tarjetas de concepto compactas */
     .concept-box {
-      background: rgba(255, 255, 255, 0.05);
+      background: var(--card-bg);
       border-radius: 12px;
       padding: 14px 18px;
       border: 1px solid rgba(255, 255, 255, 0.12);
@@ -145,7 +156,7 @@
       text-align: left;
     }
 
-    /* Pista discreta/semi-oculta para que solo el grupo sepa cómo abrir las notas */
+    /* Pista discreta para desktop */
     .group-hint {
       position: fixed;
       bottom: 8px;
@@ -155,18 +166,309 @@
       z-index: 999;
       font-family: monospace;
       letter-spacing: 0.5px;
-      transition: color 0.3s ease, opacity 0.3s ease;
+      transition: color 0.3s ease;
       user-select: none;
       cursor: pointer;
     }
     .group-hint:hover {
       color: rgba(255, 255, 255, 0.65);
     }
+
+    /* ========================================================
+       BOTÓN FLOTANTE: MODO LOCUTOR / GUION
+       ======================================================== */
+    .speaker-fab {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      z-index: 1000;
+      background: linear-gradient(135deg, rgba(189, 147, 249, 0.25), rgba(139, 233, 253, 0.25));
+      color: #f8f8f2;
+      border: 1px solid rgba(189, 147, 249, 0.45);
+      border-radius: 30px;
+      padding: 9px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      transition: all 0.25s ease;
+      user-select: none;
+      touch-action: manipulation;
+    }
+
+    .speaker-fab:active {
+      transform: scale(0.96);
+      background: rgba(189, 147, 249, 0.5);
+    }
+
+    /* En PC se mantiene muy discreto para no distraer en proyector */
+    @media (min-width: 769px) {
+      .speaker-fab {
+        opacity: 0.25;
+      }
+      .speaker-fab:hover {
+        opacity: 0.95;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(189, 147, 249, 0.4);
+      }
+    }
+
+    /* ========================================================
+       DRAWER / PANEL DE LOCUTOR (TELEPROMPTER PARA CELULAR Y PC)
+       ======================================================== */
+    .speaker-drawer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-height: 82vh;
+      background: #171821;
+      border-top: 2px solid var(--purple);
+      border-radius: 20px 20px 0 0;
+      z-index: 2000;
+      box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
+      transform: translateY(105%);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .speaker-drawer.open {
+      transform: translateY(0);
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      z-index: 1999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .drawer-header {
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.02);
+      flex-shrink: 0;
+    }
+
+    .drawer-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #f8f8f2;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .drawer-badge {
+      background: rgba(189, 147, 249, 0.2);
+      color: var(--purple);
+      border: 1px solid rgba(189, 147, 249, 0.4);
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .drawer-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .drawer-btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f8f8f2;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .drawer-close {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #f8f8f2;
+      font-size: 18px;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .drawer-body {
+      padding: 16px 18px;
+      overflow-y: auto;
+      flex: 1;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .drawer-time {
+      display: inline-block;
+      background: rgba(255, 184, 108, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(255, 184, 108, 0.4);
+      padding: 4px 12px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .drawer-script-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .drawer-script {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 14px 16px;
+      border-radius: 12px;
+      border-left: 4px solid var(--purple);
+      letter-spacing: 0.2px;
+      word-break: break-word;
+    }
+
+    .drawer-footer {
+      padding: 12px 18px;
+      display: flex;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: #111219;
+      flex-shrink: 0;
+    }
+
+    .drawer-nav-btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      color: #f8f8f2;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      touch-action: manipulation;
+    }
+
+    .drawer-nav-btn:active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .drawer-nav-primary {
+      background: rgba(80, 250, 123, 0.22);
+      color: #50fa7b;
+      border-color: rgba(80, 250, 123, 0.5);
+    }
+
+    .drawer-nav-primary:active {
+      background: rgba(80, 250, 123, 0.4);
+    }
+
+    /* Adaptaciones para Celulares */
+    @media (max-width: 768px) {
+      .speaker-fab {
+        opacity: 0.95;
+        bottom: 14px;
+        left: 14px;
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+      .drawer-header {
+        padding: 12px 16px;
+      }
+      .drawer-body {
+        padding: 14px 16px;
+      }
+      .drawer-script {
+        font-size: 16px;
+        line-height: 1.55;
+      }
+      .drawer-footer {
+        padding: 10px 16px;
+      }
+      .drawer-nav-btn {
+        padding: 11px;
+        font-size: 14px;
+      }
+      .drawer-btn-secondary {
+        display: none; /* En celular no se necesita popup */
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Pista semi-oculta en la esquina inferior (invisible para el curso, visible al pasar el mouse) -->
+  <!-- Botón flotante para abrir Modo Locutor en celular o PC -->
+  <button id="toggleSpeakerBtn" class="speaker-fab" aria-label="Abrir modo locutor y guion" title="Abrir Modo Locutor (Guion)">
+    <span>🎙️</span>
+    <span>Modo Locutor</span>
+  </button>
+
+  <!-- Pista discreta para teclado en PC [s] -->
   <div class="group-hint" title="Presiona la tecla S para abrir las notas del expositor">[s]</div>
+
+  <!-- Drawer / Panel de Locutor (Teleprompter en vivo) -->
+  <div id="speakerDrawer" class="speaker-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <span>🎙️</span>
+        <span>Guion del Expositor</span>
+        <span id="drawerSlideNum" class="drawer-badge">Slide 1 / 9</span>
+      </div>
+      <div class="drawer-actions">
+        <button id="btnOpenPopup" class="drawer-btn-secondary" title="Abrir en ventana emergente (PC)">🖥️ Pop-up</button>
+        <button id="btnCloseDrawer" class="drawer-close" aria-label="Cerrar panel">✕</button>
+      </div>
+    </div>
+
+    <div class="drawer-body">
+      <div id="drawerTimeBadge" class="drawer-time">⏱️ 0:00 - 1:10</div>
+      <div class="drawer-script-title">🗣️ Lo que debes decir:</div>
+      <div id="drawerScriptText" class="drawer-script">
+        <!-- Se rellena dinámicamente -->
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <button id="btnPrevSlide" class="drawer-nav-btn">◀ Anterior</button>
+      <button id="btnNextSlide" class="drawer-nav-btn drawer-nav-primary">Siguiente ▶</button>
+    </div>
+  </div>
+  <div id="drawerOverlay" class="drawer-overlay"></div>
 
   <div class="reveal">
     <div class="slides">
@@ -186,7 +488,7 @@
         <aside class="notes">
           TIEMPO: 0:00 - 0:15
           BIENVENIDA:
-          Bienvenidos a la presentación. Esta sesión abordará el debate central de si todo acto humano posee o no carácter moral, desarmando la distinción entre biología y razón.
+          "Bienvenidos a nuestra presentación. Hoy abordaremos la pregunta central: ¿Todo acto humano es moral?, desarmando la distinción entre biología y razón."
         </aside>
       </section>
 
@@ -225,7 +527,7 @@
         </div>
 
         <aside class="notes">
-          TIEMPO: 0:00 - 1:10 (Respetar este tiempo)
+          TIEMPO: 0:00 - 1:10
           
           GUION DEL EXPOSITOR:
           "Buenos días a todos. Hoy venimos a debatir una pregunta que parece sencilla, pero esconde una trampa filosófica: ¿Todo acto humano es moral? 
@@ -508,6 +810,7 @@
       margin: 0.04,
       minScale: 0.2,
       maxScale: 2.0,
+      touch: true,
       controls: true,
       progress: true,
       center: true,
@@ -517,12 +820,97 @@
       plugins: [ RevealNotes ]
     });
 
-    // Permitir abrir notas al hacer clic en el botón discreto
-    document.querySelector('.group-hint').addEventListener('click', function() {
+    // ========================================================
+    // LÓGICA DEL MODO LOCUTOR INTERACTIVO (CELULAR Y PC)
+    // ========================================================
+    var speakerDrawer = document.getElementById('speakerDrawer');
+    var drawerOverlay = document.getElementById('drawerOverlay');
+
+    function updateSpeakerDrawer(slideElement) {
+      if (!slideElement) {
+        slideElement = Reveal.getCurrentSlide();
+      }
+      if (!slideElement) return;
+
+      var notesEl = slideElement.querySelector('aside.notes');
+      var scriptText = "";
+      var timeText = "";
+
+      if (notesEl) {
+        var rawText = notesEl.innerText.trim();
+        var timeMatch = rawText.match(/TIEMPO:\s*([^\n\r]+)/i);
+        if (timeMatch) {
+          timeText = "⏱️ Tiempo estimado: " + timeMatch[1].trim();
+          rawText = rawText.replace(/TIEMPO:\s*[^\n\r]+/i, '').trim();
+        } else {
+          timeText = "⏱️ Tiempo: Flexible";
+        }
+
+        rawText = rawText.replace(/GUION DEL EXPOSITOR:\s*/i, '');
+        rawText = rawText.replace(/BIENVENIDA:\s*/i, '');
+        rawText = rawText.replace(/CIERRE:\s*/i, '');
+        rawText = rawText.replace(/^"|"$/g, '').trim();
+        scriptText = rawText;
+      } else {
+        timeText = "⏱️ Sin límite de tiempo";
+        scriptText = "No hay notas adicionales para esta diapositiva.";
+      }
+
+      var indices = Reveal.getIndices();
+      var totalSlides = Reveal.getTotalSlides();
+      var currentNum = indices.h + 1;
+
+      document.getElementById('drawerSlideNum').textContent = "Slide " + currentNum + " / " + totalSlides;
+      document.getElementById('drawerTimeBadge').textContent = timeText;
+      document.getElementById('drawerScriptText').textContent = scriptText;
+    }
+
+    function openDrawer() {
+      updateSpeakerDrawer();
+      speakerDrawer.classList.add('open');
+      drawerOverlay.classList.add('open');
+      speakerDrawer.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeDrawer() {
+      speakerDrawer.classList.remove('open');
+      drawerOverlay.classList.remove('open');
+      speakerDrawer.setAttribute('aria-hidden', 'true');
+    }
+
+    // Eventos de apertura/cierre
+    document.getElementById('toggleSpeakerBtn').addEventListener('click', openDrawer);
+    document.getElementById('btnCloseDrawer').addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    // Navegación dentro del drawer
+    document.getElementById('btnPrevSlide').addEventListener('click', function() {
+      Reveal.prev();
+    });
+    document.getElementById('btnNextSlide').addEventListener('click', function() {
+      Reveal.next();
+    });
+
+    // Sincronización en tiempo real con cambios de diapositiva
+    Reveal.on('slidechanged', function(event) {
+      updateSpeakerDrawer(event.currentSlide);
+    });
+    Reveal.on('ready', function(event) {
+      updateSpeakerDrawer(event.currentSlide);
+    });
+
+    // Abrir ventana emergente nativa de Reveal si se solicita en PC
+    document.getElementById('btnOpenPopup').addEventListener('click', function() {
+      closeDrawer();
       var notesPlugin = Reveal.getPlugin('notes');
       if (notesPlugin && notesPlugin.open) {
         notesPlugin.open();
       }
+    });
+
+    // Tecla 's' o clic en pista discreta
+    document.querySelector('.group-hint').addEventListener('click', function() {
+      openDrawer();
     });
   </script>
 </body>
