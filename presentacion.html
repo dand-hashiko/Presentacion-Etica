@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Disertación Ética: ¿Todo acto humano es moral?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Reveal.js CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  
+  <!-- Tema Premium oscuro y moderno -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/night.min.css" id="theme">
+
+  <style>
+    /* Estilos Premium compactos y responsivos para que todo encaje al 100% */
+    :root {
+      --accent: #ffb86c;
+      --cyan: #8be9fd;
+      --green: #50fa7b;
+      --red: #ff5555;
+      --purple: #bd93f9;
+      --text: #f8f8f2;
+    }
+
+    .reveal {
+      font-size: 28px;
+    }
+
+    .reveal h2 {
+      font-size: 1.85em;
+      text-transform: none;
+      letter-spacing: normal;
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .reveal h3 {
+      font-size: 1.45em;
+      text-transform: none;
+      letter-spacing: normal;
+      color: var(--text);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .reveal h4 {
+      font-size: 1.05em;
+      text-transform: none;
+      letter-spacing: normal;
+      color: var(--text);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .reveal .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .reveal .success {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .reveal .danger {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .reveal .info {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    /* Tarjetas de concepto compactas para no desbordar */
+    .concept-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 14px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+      text-align: left;
+    }
+
+    .concept-box.center {
+      text-align: center;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.78em;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .pill-red {
+      background: rgba(255, 85, 85, 0.2);
+      color: #ff8080;
+      border: 1px solid rgba(255, 85, 85, 0.4);
+    }
+    .pill-green {
+      background: rgba(80, 250, 123, 0.2);
+      color: #70fa94;
+      border: 1px solid rgba(80, 250, 123, 0.4);
+    }
+
+    .reveal ul {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .reveal ul li {
+      margin-bottom: 10px;
+      font-size: 0.82em;
+      line-height: 1.35;
+    }
+
+    .quote-banner {
+      margin-top: 14px;
+      padding: 10px 16px;
+      background: rgba(255, 184, 108, 0.1);
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+      font-style: italic;
+      font-size: 0.78em;
+      text-align: left;
+    }
+
+    /* Pista discreta/semi-oculta para que solo el grupo sepa cómo abrir las notas */
+    .group-hint {
+      position: fixed;
+      bottom: 8px;
+      right: 12px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.12);
+      z-index: 999;
+      font-family: monospace;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease, opacity 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+    .group-hint:hover {
+      color: rgba(255, 255, 255, 0.65);
+    }
+  </style>
+</head>
+<body>
+  <!-- Pista semi-oculta en la esquina inferior (invisible para el curso, visible al pasar el mouse) -->
+  <div class="group-hint" title="Presiona la tecla S para abrir las notas del expositor">[s]</div>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Diapositiva 1: Portada -->
+      <section data-auto-animate>
+        <h2 style="font-size: 2em; margin-bottom: 15px;">¿Todo acto humano es moral?</h2>
+        <p style="color: var(--purple); font-size: 1.05em; margin-top: 10px;">
+          La frontera filosófica entre la biología y la razón
+        </p>
+        <div style="margin-top: 25px;">
+          <span class="pill" style="background: rgba(255, 255, 255, 0.08); font-size: 0.75em; color: #f8f8f2; border: 1px solid rgba(255, 255, 255, 0.15);">
+            Tema 7 · Disertación Ética
+          </span>
+        </div>
+
+        <aside class="notes">
+          TIEMPO: 0:00 - 0:15
+          BIENVENIDA:
+          Bienvenidos a la presentación. Esta sesión abordará el debate central de si todo acto humano posee o no carácter moral, desarmando la distinción entre biología y razón.
+        </aside>
+      </section>
+
+      <!-- Diapositiva 2: La trampa de la pregunta (0:00 - 1:10) -->
+      <section>
+        <h3>La trampa de la pregunta</h3>
+
+        <div class="flex-container">
+          <div class="concept-box fragment fade-up" style="flex: 1;">
+            <h4 style="color: var(--accent);">💭 Sentido Común</h4>
+            <p style="font-size: 0.8em; margin: 0; opacity: 0.9;">
+              <strong>"Diríamos que no"</strong>: Hacemos muchas cosas sin pensar ni deliberar.
+            </p>
+          </div>
+          <div class="concept-box fragment fade-up" style="flex: 1;">
+            <h4 style="color: var(--green);">⚖️ Filosofía y Ética</h4>
+            <p style="font-size: 0.8em; margin: 0; opacity: 0.9;">
+              <strong>"La respuesta estricta es SÍ"</strong>: Solo lo libre y consciente califica como tal.
+            </p>
+          </div>
+        </div>
+
+        <div class="concept-box fragment fade-in" style="margin-top: 14px;">
+          <p style="font-size: 0.8em; margin: 0;">
+            Separamos radicalmente todo lo que hacemos en dos categorías:
+          </p>
+          <div style="margin-top: 8px;">
+            <span class="pill pill-red">Actos del Hombre</span> <small>(Biológicos / Involuntarios)</small>
+            <span style="opacity: 0.5; margin: 0 6px;">≠</span>
+            <span class="pill pill-green">Actos Humanos</span> <small>(Racionales / Libres)</small>
+          </div>
+        </div>
+
+        <div class="quote-banner fragment fade-up">
+          "Éticamente, solo somos verdaderamente responsables cuando actuamos como seres racionales."
+        </div>
+
+        <aside class="notes">
+          TIEMPO: 0:00 - 1:10 (Respetar este tiempo)
+          
+          GUION DEL EXPOSITOR:
+          "Buenos días a todos. Hoy venimos a debatir una pregunta que parece sencilla, pero esconde una trampa filosófica: ¿Todo acto humano es moral? 
+          Si nos guiamos por el sentido común, diríamos que no, porque los humanos hacemos muchas cosas sin pensar. Pero en la filosofía y la ética, la respuesta estricta es que sí. 
+          Para entender por qué, debemos separar todo lo que hacemos en dos grandes categorías: los 'Actos del hombre' y los 'Actos humanos'. Aunque suenen igual, son conceptos radicalmente opuestos. 
+          En los próximos minutos, mis compañeros y yo desarmaremos estos conceptos para demostrarles que, éticamente, solo somos verdaderamente responsables cuando actuamos como seres racionales."
+        </aside>
+      </section>
+
+      <!-- Diapositiva 3: Los Actos del Hombre y la biología (1:10 - 2:20) -->
+      <section>
+        <h3>Los «Actos del Hombre» y la biología</h3>
+
+        <div class="concept-box fragment fade-up">
+          <p style="margin: 0; font-size: 0.82em;">
+            Procesos realizados <strong>sin conciencia</strong>, <strong>sin libertad</strong>, o sin las dos.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="concept-box fragment fade-up">
+            <h4 style="color: var(--cyan); margin-bottom: 4px;">🫁 Fisiología</h4>
+            <p style="font-size: 0.72em; margin: 0; opacity: 0.85;">
+              Respirar, digestión, circulación sanguínea.
+            </p>
+          </div>
+          <div class="concept-box fragment fade-up">
+            <h4 style="color: var(--cyan); margin-bottom: 4px;">🔥 Actos Reflejos</h4>
+            <p style="font-size: 0.72em; margin: 0; opacity: 0.85;">
+              Quitar la mano de una estufa caliente.
+            </p>
+          </div>
+          <div class="concept-box fragment fade-up">
+            <h4 style="color: var(--cyan); margin-bottom: 4px;">🌙 Inconsciencia</h4>
+            <p style="font-size: 0.72em; margin: 0; opacity: 0.85;">
+              Caminar o hablar dormido (sonambulismo).
+            </p>
+          </div>
+        </div>
+
+        <div class="concept-box center fragment fade-in" style="margin-top: 14px; border-color: rgba(255, 85, 85, 0.4);">
+          <p style="margin: 0; font-size: 0.9em;">
+            Clasificación Ética: <span class="danger" style="font-size: 1.1em;">AMORALES</span>
+            <span style="opacity: 0.75; font-size: 0.78em; display: block; margin-top: 4px;">
+              Están fuera del bien y del mal. Nadie es bueno o malo por estornudar: simplemente nos pasan.
+            </span>
+          </p>
+        </div>
+
+        <aside class="notes">
+          TIEMPO: 1:10 - 2:20
+          
+          GUION DEL EXPOSITOR:
+          "Para entender la diferencia, primero hablemos de los Actos del Hombre. Estos son todos los procesos que realizamos sin conciencia, sin libertad, o sin las dos. Hablamos de nuestra biología básica y nuestros instintos. 
+          Respirar, la digestión, el acto reflejo de quitar la mano de una estufa caliente o ser sonámbulos. Como en estos actos no interviene nuestra razón ni nuestra capacidad de elegir, la ética los clasifica como amorales, es decir, están fuera del bien y del mal. 
+          Son simplemente procesos naturales de nuestra especie. Nadie es buena o mala persona por respirar más rápido o por estornudar. Simplemente, nos pasan."
+        </aside>
+      </section>
+
+      <!-- Diapositiva 4: Los Actos Humanos y las condiciones de la moral (2:20 - 3:30) -->
+      <section>
+        <h3>Los «Actos Humanos» y sus condiciones</h3>
+
+        <p style="font-size: 0.78em; opacity: 0.85; margin-bottom: 12px;">
+          Para recibir este nombre en filosofía, debe cumplir dos requisitos innegociables:
+        </p>
+
+        <div class="flex-container">
+          <div class="concept-box fragment fade-up" style="flex: 1; border-top: 3px solid var(--cyan);">
+            <h4 style="color: var(--cyan); margin-bottom: 6px;">🧠 1. La Advertencia</h4>
+            <p style="font-size: 0.75em; margin: 0; opacity: 0.9;">
+              Que nuestra conciencia e inteligencia <strong>sepa perfectamente</strong> lo que estamos haciendo.
+            </p>
+          </div>
+          <div class="concept-box fragment fade-up" style="flex: 1; border-top: 3px solid var(--green);">
+            <h4 style="color: var(--green); margin-bottom: 6px;">⚖️ 2. El Consentimiento</h4>
+            <p style="font-size: 0.75em; margin: 0; opacity: 0.9;">
+              Que nuestra voluntad decida hacerlo <strong>libremente</strong>, sin estar obligada.
+            </p>
+          </div>
+        </div>
+
+        <div class="concept-box fragment fade-in" style="margin-top: 14px;">
+          <p style="font-size: 0.78em; margin: 0;">
+            <strong>Ejemplos:</strong> Estudiar para este ramo, decir la verdad, o decidir robar.
+          </p>
+          <p style="font-size: 0.78em; margin: 6px 0 0 0;" class="success">
+            ✔ Por definición, <strong>todo acto humano es moral</strong>: se inclina inevitablemente hacia el bien o el mal.
+          </p>
+        </div>
+
+        <aside class="notes">
+          TIEMPO: 2:20 - 3:30
+          
+          GUION DEL EXPOSITOR:
+          "En la otra cara están los verdaderos Actos Humanos. Para que un acto reciba este nombre en filosofía, debe cumplir dos requisitos innegociables: tener la advertencia (que nuestra conciencia e inteligencia sepa perfectamente lo que estamos haciendo) y tener consentimiento (que nuestra voluntad decida hacerlo libremente). 
+          Estudiar para este ramo, decir la verdad, o decidir robar, son Actos Humanos. 
+          Por definición, todo acto humano es moral porque, al haber libertad e inteligencia, el acto inevitablemente se inclina hacia el bien o hacia el mal. Aquí es donde construimos nuestra personalidad y donde la sociedad tiene derecho a exigirnos responsabilidad."
+        </aside>
+      </section>
+
+      <!-- Diapositiva 5: Los modificadores de la voluntad (3:30 - 4:40) -->
+      <section>
+        <h3>Los modificadores de la voluntad</h3>
+        <p style="font-size: 0.76em; font-style: italic; opacity: 0.85; margin-bottom: 12px;">
+          ¿Qué pasa cuando nuestra libertad o conocimiento están a medias?
+        </p>
+
+        <div class="flex-container">
+          <div class="concept-box fragment fade-left" style="flex: 1;">
+            <h4 style="color: var(--accent); margin-bottom: 6px;">❓ Ignorancia Invencible</h4>
+            <p style="font-size: 0.73em; opacity: 0.85; margin-bottom: 6px;">
+              <strong>Anula la advertencia (conocimiento):</strong>
+            </p>
+            <p style="font-size: 0.7em; margin: 0; opacity: 0.8;">
+              Dar agua envenenada sin saberlo ni tener forma de saberlo. El acto no es moralmente malo.
+            </p>
+          </div>
+          <div class="concept-box fragment fade-right" style="flex: 1;">
+            <h4 style="color: var(--red); margin-bottom: 6px;">🔫 Miedo Extremo / Coacción</h4>
+            <p style="font-size: 0.73em; opacity: 0.85; margin-bottom: 6px;">
+              <strong>Secuestra el consentimiento (libertad):</strong>
+            </p>
+            <p style="font-size: 0.7em; margin: 0; opacity: 0.8;">
+              Cometer un delito bajo amenaza de arma. El cuerpo actúa, pero la voluntad está anulada.
+            </p>
+          </div>
+        </div>
+
+        <div class="quote-banner fragment fade-up" style="border-left-color: var(--red); margin-top: 14px;">
+          "En estos casos, la moralidad del acto disminuye drásticamente o simplemente desaparece."
+        </div>
+
+        <aside class="notes">
+          TIEMPO: 3:30 - 4:40
+          
+          GUION DEL EXPOSITOR:
+          "¿Y qué pasa cuando nuestra libertad está a medias? Aquí participan los modificadores de la voluntad. Hay situaciones que pueden convertir un Acto Humano en un simple Acto del Hombre, o al menos reducir nuestra culpa. 
+          Por ejemplo, la ignorancia invencible: si te doy a beber agua que, sin yo saberlo, estaba envenenada, mi acto no es moralmente malo, porque se ha saltado el conocimiento. 
+          Lo mismo ocurre con el miedo extremo o la coacción: si alguien me apunta con un arma para que cometa un delito, mi libertad está anulada. Mi cuerpo actúa, pero mi voluntad está secuestrada. En estos casos, la moralidad del acto disminuye drásticamente o simplemente desaparece."
+        </aside>
+      </section>
+
+      <!-- Diapositiva 6: Primera conclusión: El Juicio del Observador (4:40 - 6:00) -->
+      <section>
+        <h3>Primera conclusión: El Juicio del Observador</h3>
+
+        <div class="flex-container">
+          <div class="concept-box fragment fade-up" style="flex: 1;">
+            <h4 style="color: var(--purple); margin-bottom: 6px;">👁️ El juicio ajeno no define la moral</h4>
+            <p style="font-size: 0.72em; margin: 0; opacity: 0.9;">
+              Si por un tic nervioso golpeas a alguien, el otro puede enojarse, pero tu acto <strong>sigue siendo amoral</strong> por falta de voluntad.
+            </p>
+          </div>
+          <div class="concept-box fragment fade-up" style="flex: 1;">
+            <h4 style="color: var(--cyan); margin-bottom: 6px;">🐅 Instintos vs. Razón</h4>
+            <p style="font-size: 0.72em; margin: 0; opacity: 0.9;">
+              Sentir instintos "salvajes" es amoral; la moralidad solo entra cuando la razón decide <strong>ceder</strong> al impulso o <strong>controlarlo</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="concept-box center fragment fade-in" style="margin-top: 14px; background: rgba(80, 250, 123, 0.1); border-color: var(--green);">
+          <p style="margin: 0; font-size: 0.95em; font-weight: 700;">
+            En resumen: ¿Todo acto humano es moral? <span class="success">SÍ</span>.
+          </p>
+          <p style="margin: 4px 0 0 0; font-size: 0.75em; opacity: 0.85;">
+            Si no es libre y consciente, <strong>no era un acto humano</strong>: era solo biología, un acto del hombre.
+          </p>
+        </div>
+
+        <aside class="notes">
+          TIEMPO: 4:40 - 6:00
+          
+          GUION DEL EXPOSITOR:
+          "¿Qué pasa si hago algo por un instinto involuntario, pero alguien más me juzga como una mala persona por ello? El juicio de otro no define la moralidad de tu acto. 
+          Si te da un tic nervioso y golpeas a alguien sin querer, el otro puede enojarse y juzgarte, pero tu acto sigue siendo amoral porque no hubo voluntad. Sentir instintos 'salvajes' es amoral; la moralidad solo entra cuando nuestra razón decide ceder a ese instinto o controlarlo. 
+          En resumen: ¿Todo acto humano es moral? Sí, porque si no es libre y consciente, entonces simplemente no era un 'acto humano', era solo biología, un 'acto del hombre'."
+        </aside>
+      </section>
+
+      <!-- Diapositiva 7: Segunda conclusión: El peligro de juzgar solo el resultado (aprox 50-60 seg) -->
+      <section>
+        <h3 style="font-size: 1.25em;">Segunda conclusión: El peligro de juzgar solo el resultado</h3>
+
+        <div class="concept-box fragment fade-up" style="margin-bottom: 12px;">
+          <p style="margin: 0; font-size: 0.78em;">
+            La moralidad de una acción <strong>no se mide solo por el daño visible</strong>, sino por la <strong>intención y la conciencia</strong>.
+          </p>
+        </div>
+
+        <ul style="list-style: none; padding: 0;">
+          <li class="fragment fade-left">
+            ❌ <strong>El error cotidiano:</strong> Si algo causó daño o desastre, asumir automáticamente que la persona actuó con maldad.
+          </li>
+          <li class="fragment fade-left">
+            🎯 <strong>El criterio ético:</strong> Se puede provocar un desastre por accidente o ignorancia sin haber cometido un acto moralmente malo.
+          </li>
+          <li class="fragment fade-left">
+            ⚖️ <strong>La condición innegociable:</strong> Para que exista culpa o mérito auténtico, siempre debió existir la <strong>opción real de elegir otra cosa</strong>.
+          </li>
+        </ul>
+
+        <div class="quote-banner fragment fade-in">
+          "Si no había alternativa consciente, no hay falta ética: solo un hecho desafortunado."
+        </div>
+
+        <aside class="notes">
+          TIEMPO: Aprox. 50–60 segundos
+          
+          GUION DEL EXPOSITOR:
+          "Una segunda conclusión clave es que la moralidad de una acción no se mide solo por el daño o el resultado visible, sino por la intención y la conciencia. 
+          En la vida diaria solemos cometer el error de juzgar únicamente el efecto: si algo salió mal o causó daño, asumimos automáticamente que la persona actuó con maldad. Pero como vimos con la ignorancia o los accidentes, alguien puede provocar un desastre sin haber cometido un acto moralmente malo, porque faltaba el conocimiento o la libertad de evitarlo. 
+          Para que exista culpa o mérito moral auténtico, siempre tiene que haber existido la opción real de elegir otra cosa. Si no había alternativa consciente, no hay falta ética, solo un hecho desafortunado."
+        </aside>
+      </section>
+
+      <!-- Diapositiva 8: Tercera conclusión: La libertad como precio de la responsabilidad (aprox 50-60 seg) -->
+      <section>
+        <h3 style="font-size: 1.25em;">Tercera conclusión: La libertad como precio de la responsabilidad</h3>
+
+        <div class="concept-box fragment fade-up" style="margin-bottom: 12px;">
+          <p style="margin: 0; font-size: 0.78em;">
+            <strong>No podemos exigirnos ni atribuirnos responsabilidad si renunciamos a nuestra libertad.</strong>
+          </p>
+        </div>
+
+        <ul style="list-style: none; padding: 0;">
+          <li class="fragment fade-up">
+            🛡️ <strong>La tentación de excusarse:</strong> Culpar al cansancio o a la presión diciendo <em>"no tuve otra opción"</em> para reducir decisiones a simples reflejos biológicos.
+          </li>
+          <li class="fragment fade-up">
+            👤 <strong>Asumir la autonomía:</strong> Reconocer que realizamos "Actos Humanos" significa aceptar el costo de ser autores directos de nuestro impacto en los demás.
+          </li>
+          <li class="fragment fade-up">
+            🌟 <strong>El verdadero propósito ético:</strong> La ética no castiga la biología, sino que nos recuerda que <strong>ser libres implica responder por lo que elegimos</strong>.
+          </li>
+        </ul>
+
+        <aside class="notes">
+          TIEMPO: Aprox. 50–60 segundos
+          
+          GUION DEL EXPOSITOR:
+          "Por último, nos queda una lección fundamental: no podemos exigirnos ni atribuirnos responsabilidad si renunciamos a nuestra libertad. 
+          A veces es tentador culpar al entorno, al cansancio o a la presión diciendo 'no tuve otra opción', reduciendo nuestras decisiones a simples actos reflejos o actos del hombre. Sin embargo, reconocer que somos capaces de realizar 'Actos Humanos' significa aceptar el costo de nuestra propia autonomía: cada vez que actuamos con lucidez y decidimos por cuenta propia, nos convertimos en los autores directos de nuestro impacto en los demás. 
+          La ética no existe para castigar la biología, sino para recordarnos que ser libres implica responder por lo que elegimos hacer."
+        </aside>
+      </section>
+
+      <!-- Diapositiva 9: Cierre -->
+      <section>
+        <h2 style="color: var(--green); margin-bottom: 20px;">¡Muchas Gracias!</h2>
+        
+        <div class="concept-box center" style="display: inline-block; padding: 12px 30px; margin-bottom: 20px;">
+          <p style="margin: 0; font-size: 0.85em;">
+            <strong>¿Preguntas, reflexiones o comentarios?</strong>
+          </p>
+        </div>
+
+        <div style="font-size: 0.72em; opacity: 0.7; max-width: 650px; margin: 0 auto;">
+          <p><strong>Síntesis:</strong> Actos del Hombre = Biología (Amorales) · Actos Humanos = Conciencia + Libertad (Morales)</p>
+        </div>
+
+        <aside class="notes">
+          CIERRE:
+          "Con esto finalizamos nuestra exposición y abrimos el espacio para dudas, comentarios o contraejemplos que deseen plantear. ¡Muchas gracias por su atención!"
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js Scripts y Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1100,
+      height: 680,
+      margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2.0,
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      transition: 'convex',
+      backgroundTransition: 'fade',
+      plugins: [ RevealNotes ]
+    });
+
+    // Permitir abrir notas al hacer clic en el botón discreto
+    document.querySelector('.group-hint').addEventListener('click', function() {
+      var notesPlugin = Reveal.getPlugin('notes');
+      if (notesPlugin && notesPlugin.open) {
+        notesPlugin.open();
+      }
+    });
+  </script>
+</body>
+</html>
