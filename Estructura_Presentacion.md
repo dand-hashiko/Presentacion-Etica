@@ -13,8 +13,8 @@
 | **4** | **Los modificadores de la voluntad** | `3:30 - 4:40` | Ignorancia invencible y miedo extremo / coacción |
 | **5** | **Primera conclusión y el Juicio del Observador** | `4:40 - 6:00` | El juicio ajeno no define la moral + Respuesta definitiva |
 | **6** | **Segunda conclusión: El peligro de juzgar solo el resultado** | `+50 a 60 seg` | Intención y conciencia vs. Daño accidental visible |
-| **7** | **Tercera conclusión: La libertad como precio de la responsabilidad** | `+50 a 60 seg` | Asumir la autonomía sin excusarse en la biología |
-| **—** | **Cierre y Ronda de Preguntas** | Variable | Agradecimiento y espacio para debate |
+| **7** | **Tercera conclusión: La responsabilidad como precio de la libertad** | `+50 a 60 seg` | Asumir la autonomía sin excusarse en la biología |
+| **—** | **Cierre y Conclusión Definitiva: ¿Todo acto humano es moral?** | `+20 a 30 seg` | Síntesis final, respuesta concluyente y retiro directo al asiento |
 
 ---
 
@@ -142,32 +142,35 @@
 
 ---
 
-## Diapositiva 8: Tercera conclusión: La libertad como precio de la responsabilidad
+## Diapositiva 8: Tercera conclusión: La responsabilidad como precio de la libertad
 - **Tiempo asignado:** `aprox. 50 – 60 segundos`
 - **Puntos clave en pantalla:**
-  - 🛡️ **La tentación de la excusa:** Escudarse en "no tuve opción", el estrés o el cansancio para reducir decisiones a simples reflejos biológicos.
-  - 👑 **El costo de la autonomía:** Ser capaces de Actos Humanos nos hace autores directos de nuestro impacto en los demás.
-  - 🌟 **El sentido de la Ética:** No existe para castigar la biología, sino para recordar que **ser libres exige responder por lo que elegimos**.
+  - 🛡️ **La tentación de excusarse:** Culpar al cansancio o a la presión diciendo "no tuve otra opción" para reducir decisiones a simples reflejos biológicos.
+  - 👑 **Asumir la autonomía:** Ser capaces de Actos Humanos significa aceptar el costo de ser autores directos de nuestro impacto en los demás.
+  - 🌟 **El verdadero propósito ético:** La ética no castiga la biología, sino que nos recuerda que **la responsabilidad es el precio ineludible de nuestra libertad**.
 
 ### 🗣️ Guion del Expositor (Palabra por palabra):
-> "Por último, nos queda una lección fundamental: **no podemos exigirnos ni atribuirnos responsabilidad si renunciamos a nuestra libertad**.
+> "Por último, nos queda una lección fundamental: **la responsabilidad es el precio ineludible de nuestra libertad**.
 > 
-> A veces es tentador culpar al entorno, al cansancio o a la presión diciendo 'no tuve otra opción', reduciendo nuestras decisiones a simples actos reflejos o actos del hombre. Sin embargo, reconocer que somos capaces de realizar 'Actos Humanos' significa aceptar el costo de nuestra propia autonomía: cada vez que actuamos con lucidez y decidimos por cuenta propia, nos convertimos en los autores directos de nuestro impacto en los demás. 
+> A veces es tentador culpar al entorno, al cansancio o a la presión diciendo 'no tuve otra opción', reduciendo nuestras decisiones a simples reflejos biológicos o actos del hombre. Sin embargo, reconocer que somos capaces de realizar 'Actos Humanos' significa aceptar el costo de nuestra propia autonomía: ser libres implica responder por lo que elegimos. Cada vez que decidimos con lucidez y por cuenta propia, nos convertimos en los autores directos de nuestro impacto en los demás.
 > 
-> La ética no existe para castigar la biología, sino para recordarnos que ser libres implica responder por lo que elegimos hacer."
+> La ética no existe para castigar la biología, sino para recordarnos que asumir la libertad exige pagar su precio: responder con madurez por lo que decidimos hacer."
 
 ---
 
-## Diapositiva 9: Cierre y Preguntas
+## Diapositiva 9: Cierre Definitivo: ¿Todo acto humano es moral?
+- **Tiempo asignado:** `aprox. 20 – 30 segundos`
 - **Puntos clave en pantalla:**
-  - 🎓 Síntesis final:
-    - *Actos del Hombre* ➔ Fisiología e instinto ➔ **Amorales**
+  - 🏷️ **Título de Cierre:** ¿Todo acto humano es moral? *(Cierre circular idéntico al inicio)*
+  - ⚖️ **Veredicto ético:** **SÍ**. Todo acto propiamente humano nace de la advertencia y el consentimiento, por lo que siempre es moral y genera responsabilidad.
+  - 🎓 **Síntesis gráfica:**
+    - *Actos del Hombre* ➔ Fisiología e instinto ➔ **Amorales** (sin culpa ni mérito)
     - *Actos Humanos* ➔ Inteligencia + Voluntad ➔ **Siempre Morales**
   - ¡Muchas gracias por su atención!
-  - Espacio abierto para dudas y debate.
+  - *(Nota: Sin preguntas ni comentarios, retiro inmediato al asiento por indicación del docente)*
 
 ### 🗣️ Guion de Cierre:
-> "Con esto damos por concluida nuestra presentación. Los invitamos a abrir el diálogo: ¿tienen alguna duda, comentario o contraejemplo que quieran debatir? Muchas gracias."
+> "Para concluir y volver a la pregunta con la que comenzamos: **¿Todo acto humano es moral?** La respuesta filosófica y ética es un rotundo **SÍ**. Todo acto propiamente humano, al nacer de la advertencia de nuestra mente y del consentimiento de nuestra libertad, tiene peso ético y nos hace directamente responsables. Cuando no hay libertad, solo actúa la biología; pero cuando decidimos con plena conciencia, somos los únicos autores de nuestra moral. Muchas gracias por su atención."
 
 ---
 
